@@ -1,0 +1,22 @@
+{
+  "name": "ms-tcp-location",
+  "version": "1.0.0",
+  "description": "The location microservice of location project for receive the packages from devices",
+  "main": "server.js",
+  "scripts": {
+    "start": "cross-env LOGGING_CONSOLE_LEVEL=debug LOGGING_FILE_LEVEL=debug LOGGING_DB_LEVEL=error LOGGING_SAVE_REQUESTS=true LOGGING_USE_DB=false nodemon server.js",
+    "test": "cross-env LIMIT_WAITING=0 IN_TEST=/mock/ LANGUAGE=en LOGGING_CONSOLE_LEVEL=debug LOGGING_FILE_LEVEL=debug LOGGING_DB_LEVEL=error LOGGING_SAVE_REQUESTS=true LOGGING_USE_DB=false nyc --reporter=html --reporter=text-summary --all ./node_modules/mocha/bin/_mocha -- -R spec --recursive --timeout 120000"
+  },
+  "author": "Paulo Francisco",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.20.0",
+    "cross-env": "7.0.2",
+    "crypto": "1.0.1",
+    "hex2dec": "1.1.2",
+    "net": "1.0.2",
+    "nodemon": "2.0.4",
+    "winston": "3.3.3",
+    "winston-daily-rotate-file": "4.5.0"
+  }
+}
