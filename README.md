@@ -38,6 +38,12 @@ Caso queira utilizar um ambiente com [Docker](https://www.docker.com/) basta exe
 docker container run -d --name [NOME_DO_CONTAINER] --link [CONTAINER_DO_MS-API-LOCATION]:[ALIAS_OPCIONAL] -p [PORTA_DISPONÍVEL]:9000 -e LOCATION_API='[ALIAS_OPCIONAL]:[PORTA_DO_MS-API-LOCATION]' -d paulofsr/location-tcp
 ```
 
+Exemplo:
+
+```shell
+docker container run -d --name location-tcp --link location:location -p 9000:9000 -e LOCATION_API='http://location:5300' paulofsr/ms-tcp-location 
+```
+
 Altera a informação: 
 * **NOME_DO_CONTAINER**: para um nome a sua escolha, pois isso será importante para montar o link nos container em comunicação com essa aplicação. 
 * **CONTAINER_DO_MS-API-LOCATION**: Nome definido para o container do [ms-api-location](https://github.com/Paulofsr/ms-api-location).
