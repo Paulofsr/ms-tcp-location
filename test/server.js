@@ -4,7 +4,6 @@ var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiSubset);
 chai.use(chaiAsPromised);
 var expect = chai.expect;
-var sleep = require('sleep');
 var server = require('../server');
 var net             = require('net');
 var client;
@@ -23,11 +22,9 @@ describe('serveHelper', function(){
         client.on('data', function(data) {
             expect(data).to.be.equal(pingWaited);
         }); 
-        sleep.sleep(3)
     });
 
     after(function () {
-        sleep.sleep(10)
         client.end();
     });
 
