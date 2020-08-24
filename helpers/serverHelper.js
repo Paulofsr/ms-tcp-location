@@ -1,4 +1,3 @@
-
 var settings = require('../config/settings');
 var logger      = require('../config/logger')(settings);
 var packageHelper = require('./packageHelper');
@@ -6,7 +5,7 @@ var packageHelper = require('./packageHelper');
 module.exports = {
     handleConnection: function(conn) {    
         var remoteAddress = conn.remoteAddress + ':' + conn.remotePort;  
-        logger.info('new client connection from %s', remoteAddress);
+        logger.info(`new client connection from ${remoteAddress}`);
     
         conn.setEncoding('utf8');
         conn.on('data', onConnData);  

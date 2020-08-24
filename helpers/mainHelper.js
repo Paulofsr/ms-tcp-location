@@ -8,8 +8,6 @@ module.exports = {
                 return HashHelper;
             case 'date':
                 return new DateHelper();
-            default:
-                return null;
         }
     }
 };

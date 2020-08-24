@@ -1,4 +1,3 @@
-
 var axios       = require('axios');
 var hex2dec     = require('hex2dec');
 var settings    = require('../config/settings');
@@ -46,7 +45,7 @@ module.exports = {
             });
     },
 
-    getACK: function(preData, hasKeyEnter = false){
+    getACK: function(preData, hasKeyEnter){
         let keyEnter = hasKeyEnter ? '\n': '';
         return `${settings.infos.start}${preData.deviceId_Hex}${settings.infos.ack}${settings.infos.ping}${settings.infos.end}${keyEnter}`;
     }
