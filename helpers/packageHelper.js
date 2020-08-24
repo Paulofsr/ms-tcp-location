@@ -31,7 +31,7 @@ module.exports = {
     },
 
     sendPackage: function(preData){
-        let url = `${settings.apiURL}/v1/info`;
+        let url = `${settings.apiURL}/api/v1/info`;
         axios.post(url, preData)
             .then(response => {
                 if (response.status == 204) {
